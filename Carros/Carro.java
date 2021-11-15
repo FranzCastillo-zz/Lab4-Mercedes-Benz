@@ -19,6 +19,8 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     // PROPIEDADES DEL CARRO
     private boolean encendido;
     private boolean estaEnLlamada;
+    private String modoActual;
+    private double emisoraActual;
 
     public Carro(){
         // -------------- MODO REPRODUCCION ---------------
@@ -43,6 +45,8 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         inicializarContactos();
         // ------------- ATRIBUTOS DEL CARRO -------------
         encendido = false;
+        modoActual = "FM";
+        emisoraActual = 90.5;
     }
     // ----------------------------------------- MODO RADIO -----------------------------------
     public void subirEmisora(){
@@ -52,7 +56,12 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
 
     }
     public void cambiarModo(){
-
+        if (this.modoActual.equals("FM")){
+            this.modoActual = "AM";
+        }
+        else{
+            this.modoActual = "FM";
+        }
     }
     public boolean radioEncendido(){
         return radioEncendido;
@@ -136,5 +145,9 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     }
     public void setEncendido(boolean estado){
         this.encendido = estado;
+    }
+    
+    public String getModoActual(){
+        return this.modoActual;
     }
 }
