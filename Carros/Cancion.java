@@ -4,17 +4,13 @@ public class Cancion {
     private String nombre;
     private String duracion;
     private String autor;
-    private String genero;
+    private String playlist;
 
-    public Cancion(String nombre, String autor, String duracion, String genero){
+    public Cancion(String nombre, String autor, String duracion, String playlist){
         this.nombre = nombre;
         this.autor = autor;
         this.duracion = duracion;        
-        this.genero = genero;
-    }
-
-    public Cancion getCancion(){
-        return this;
+        this.playlist = playlist;
     }
 
     public String getNombre() {
@@ -29,8 +25,10 @@ public class Cancion {
         return this.autor;
     }
 
-    public String getGenero() {
-        return this.genero;
+    public String getPlaylist() {
+        return this.playlist;
     }
-
+    public String reproducir(){
+        return "Esta sonando: ";
+    }
 }

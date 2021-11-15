@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import Carros.Carro;
 import Carros.Cancion;
@@ -272,18 +273,19 @@ public class Vista {
      * Sespliega en el radio los datos de la cancion 
      * @param cancion parametro de tipo Cancion
      */
-    public void pantallaEnModoReproducción(Cancion cancion){
+    public void pantallaEnModoReproducción(Carro c){
+        Cancion cancion = c.getCancionActual();
         separador();
         prnt("MODO: REPRODUCCION \n" +
-                "\t\tEN REPRODUCCION: \n" +
+                "\t\tPLAYLIST: " + cancion.getPlaylist() + "\n\n" +
+                "\t\tEN REPRODUCCION: \n\n" +
                 "\t\tCancion: " + cancion.getNombre() + "\n" +
                 "\t\tArtista: " + cancion.getAutor() + "\n" +
-                "\t\tDuracion: " + cancion.getDuracion() + " min\n" +
-                "\t\tGenero: "+ cancion.getGenero()+ "\n");
+                "\t\tDuracion: " + cancion.getDuracion() + " min\n");
         separador();
     }
 
-
-    
-
+    public void mostrarReproducirCancion(String texto){
+        prnt(texto);
+    }
 }

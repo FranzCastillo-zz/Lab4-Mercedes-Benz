@@ -117,6 +117,7 @@ public class MercedesBenz {
     private void modoReproduccion(){
         boolean salirModoReproduccion = false;
         while(!salirModoReproduccion){
+            v.pantallaEnModoReproducción(carroActual);
             int opcion = v.mostrarMenuReproduccion();
             switch(opcion){
                 case 1: // SELECCIONAR LISTA DE REPRODUCCION
@@ -124,6 +125,7 @@ public class MercedesBenz {
                 case 2: // CAMBIAR CANCION
                 break;
                 case 3: // ESCUCHAR CANCION
+                    v.mostrarReproducirCancion(carroActual.getCancionActual().reproducir());
                 break;
                 case 4: // SALIR MODO REPRODUCCION
                     salirModoReproduccion = true;

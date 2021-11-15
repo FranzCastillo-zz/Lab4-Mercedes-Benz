@@ -9,14 +9,15 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     private ArrayList<Cancion> listaRock;
     private ArrayList<Cancion> listaRockAlternativo;
     private ArrayList<Cancion> listaActual;
-
     private Cancion cancionActual;
     private int posicionCancionActual;
-    
-    private boolean radioEncendido;     // MODO RADIO
-    private boolean telefonoConectado;  // MODO TELEFONO
-    private boolean encendido;          // PROPIEDADES DEL CARRO
-
+    // MODO RADIO
+    private boolean radioEncendido;
+    // MODO TELEFONO
+    private boolean telefonoConectado;
+    // PROPIEDADES DEL CARRO
+    private boolean encendido;
+    private boolean estaEnLlamada;
 
     public Carro(){
         // -------------- MODO REPRODUCCION ---------------
@@ -71,14 +72,14 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     // ----------------------------------------- MODO REPRODUCCION ----------------------------
     // AGREGARLES 5 CANCIONES C/U
     private void inicializarListaPop(){
-        listaPop.add(new Cancion("Wake Me Up", "4:07", "Avicii", "Pop"));
-        listaPop.add(new Cancion("Cocoon", "4:15", "Milky Chance", "Pop"));
-        listaPop.add(new Cancion("Old Me", "3:07", "5SOS", "Pop"));
-        listaPop.add(new Cancion("Counting Stars", "4:17", "OneRepublic", "Pop"));
-        listaPop.add(new Cancion("Saturday", "2:52", "Twenty One Pilots", "Pop"));
+        listaPop.add(new Cancion("Wake Me Up", "Avicii", "4:07", "Lista Pop"));
+        listaPop.add(new Cancion("Cocoon", "Milky Chance", "4:15",  "Lista Pop"));
+        listaPop.add(new Cancion("Old Me", "5SOS", "3:07", "Lista Pop"));
+        listaPop.add(new Cancion("Counting Stars", "OneRepublic", "4:17", "Lista Pop"));
+        listaPop.add(new Cancion("Saturday", "Twenty One Pilots", "2:52", "Lista Pop"));
     }
     private void inicializarListaRock(){
-        //listaPop.add(new Cancion());
+        listaRock.add(new Cancion("Golden Trunks","Arctic Monkeys","2:53","Lista Rock"));
     }
     private void inicializarListaRockAlternativo (){
         //listaPop.add(new Cancion());
@@ -99,8 +100,15 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     public void cambiarCancion(){
 
     }
-    public String escucharCancion(Cancion c){
-        return c.getNombre();
+    /*public String escucharCancion(Cancion c){
+        //return c.getCancion();
+        return null;
+    }*/
+    public Cancion getCancionActual(){
+        return this.cancionActual;
+    }
+    public ArrayList<Cancion> getPlaylistActual(){
+        return this.listaActual;
     }
     // ----------------------------------------------------------------------------------------
     // --------------------------------------- MODO TELEFONO ----------------------------------
@@ -117,14 +125,5 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     }
     public void setEncendido(boolean estado){
         this.encendido = estado;
-    }
-
-    public String getPhoneConnectionState(){
-        if(telefonoConectado){
-            return "Conectado";
-        }else{
-            return "Desconectado";
-        }
-
     }
 }
