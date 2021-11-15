@@ -85,7 +85,11 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         listaRock.add(new Cancion("Golden Trunks","Arctic Monkeys","2:53","Lista Rock"));
     }
     private void inicializarListaRockAlternativo (){
-        //listaPop.add(new Cancion());
+        listaRockAlternativo.add(new Cancion("Time To Dance", "Panic! At The Disco", "3:22", "Lista Rock Alternativo"));
+        listaRockAlternativo.add(new Cancion("Losing Blood", "Weathers", "3:21", "Lista Rock Alternativo"));
+        listaRockAlternativo.add(new Cancion("What You Know", "Two Door Cinema Club", "3:11", "Lista Rock Alternativo"));
+        listaRockAlternativo.add(new Cancion("Reptilia", "The Strokes", "3:40", "Lista Rock Alternativo"));
+        listaRockAlternativo.add(new Cancion("Bleak December", "Set It Off", "3:07", "Lista Rock Alternativo"));
     }
     public void seleccionarLista(int numeroDeLista){
         switch(numeroDeLista){
