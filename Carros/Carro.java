@@ -72,6 +72,10 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     // AGREGARLES 5 CANCIONES C/U
     private void inicializarListaPop(){
         listaPop.add(new Cancion("Wake Me Up", "4:07", "Avicii", "Pop"));
+        listaPop.add(new Cancion("Cocoon", "4:15", "Milky Chance", "Pop"));
+        listaPop.add(new Cancion("Old Me", "3:07", "5SOS", "Pop"));
+        listaPop.add(new Cancion("Counting Stars", "4:17", "OneRepublic", "Pop"));
+        listaPop.add(new Cancion("Saturday", "2:52", "Twenty One Pilots", "Pop"));
     }
     private void inicializarListaRock(){
         //listaPop.add(new Cancion());
