@@ -7,6 +7,10 @@ public class CarroC extends Carro{
     public CarroC(){
         super();
     }
+    
+    /** 
+     * @return String El pronostico del clima
+     */
     @Override
     public String modoProductividad() {
         Random r = new Random();
@@ -22,15 +26,27 @@ public class CarroC extends Carro{
         }
     }
 
+    
+    /** 
+     * @return String el efecto de colocar la llamada en espera
+     */
     @Override
     public String modoTelefonoEspecifico() {
         // TODO Auto-generated method stub
         return null;
     }
+    
+    /** 
+     * @return String El nombre de la funcion 
+     */
     @Override
     public String getFuncionProductividad() {
         return "Ver pronostico del tiempo";
     }
+    
+    /** 
+     * @return String El nombre de la funcion
+     */
     public String getFuncionalidadTelefonoEspecifica() {
         return "Poner llamada en espera";
     }

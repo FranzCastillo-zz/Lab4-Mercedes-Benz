@@ -80,7 +80,12 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     public void setTelefonoConectado(boolean estado){
         this.telefonoConectado = estado;
     }
+    
     // --------------------------------------- MODO PRODUCTIVIDAD -----------------------------
+    /** 
+     * @return String El efecto de ejecutar la funcion de productividad
+     */
+
     public abstract String getFuncionProductividad();
     // ----------------------------------------- MODO REPRODUCCION ----------------------------
     private void inicializarListaPop(){
@@ -100,6 +105,10 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         listaRockAlternativo.add(new Cancion("Reptilia", "The Strokes", "3:40", "Lista Rock Alternativo"));
         listaRockAlternativo.add(new Cancion("Bleak December", "Set It Off", "3:07", "Lista Rock Alternativo"));
     }
+    
+    /** 
+     * @param numeroDeLista El numero de lista que desea el usuario colocar
+     */
     public void seleccionarLista(int numeroDeLista){
         switch(numeroDeLista){
             case 0:
@@ -124,13 +133,20 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         }
         cancionActual = listaActual.get(posicionCancionActual % 5);
     }
+    
+    /** 
+     * @return Cancion La cancion que se esta reproduciendo actualmente
+     */
     public Cancion getCancionActual(){
         return this.cancionActual;
     }
+    
+    /** 
+     * @return ArrayList<Cancion> La lista de canciones que hay
+     */
     public ArrayList<Cancion> getPlaylistActual(){
         return this.listaActual;
     }
-    // ----------------------------------------------------------------------------------------
     // --------------------------------------- MODO TELEFONO ----------------------------------
     public String llamarContacto(Contacto c){
         String llamada = "";
@@ -138,7 +154,6 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         return llamada;
     }
     public abstract String getFuncionalidadTelefonoEspecifica();
-    //------------------------------------------------------------------------------------------
     //------------------------------------------ SETTERS Y GETTERS -----------------------------
     public boolean getEncendido(){
         return this.encendido;
