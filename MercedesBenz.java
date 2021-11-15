@@ -123,12 +123,15 @@ public class MercedesBenz {
             switch(opcion){
                 case 1: // SELECCIONAR LISTA DE REPRODUCCION
                 break;
-                case 2: // CAMBIAR CANCION
+                case 2: // SIGUIENTE CANCION
                 break;
-                case 3: // ESCUCHAR CANCION
+                case 3: // REGRESAR CANCION
                     v.mostrarReproducirCancion(carroActual.getCancionActual().reproducir());
                 break;
-                case 4: // SALIR MODO REPRODUCCION
+                case 4: // REGRESAR CANCION
+                    v.mostrarReproducirCancion(carroActual.getCancionActual().reproducir());
+                break;
+                case 5: // SALIR MODO REPRODUCCION
                     salirModoReproduccion = true;
                 break;
             }

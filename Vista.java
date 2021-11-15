@@ -227,9 +227,10 @@ public class Vista {
         separador();
         prnt("Que accion desea realizar?");
         prnt("1. Seleccionar Lista de Reproduccion");
-        prnt("2. Cambiar Cancion");
-        prnt("3. Escuchar Cancion");
-        prnt("4. Salir modo reproduccion");
+        prnt("2. Siguiente cancion");
+        prnt("3. Regresar cancion");
+        prnt("4. Escuchar Cancion");
+        prnt("5. Salir modo reproduccion");
         separador();
         while(true){
             prnt("Ingrese la accion que desea realizar:");

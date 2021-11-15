@@ -44,10 +44,6 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         // ------------- ATRIBUTOS DEL CARRO -------------
         encendido = false;
     }
-    protected int getRandomNumber(int min, int max) {
-        //https://www.baeldung.com/java-generating-random-numbers-in-range
-        return (int) ((Math.random() * (max - min)) + min);
-    }
     // ----------------------------------------- MODO RADIO -----------------------------------
     public void subirEmisora(){
 
@@ -68,6 +64,7 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     // ----------------------------------------- MODO TELEFONO --------------------------------
     private void inicializarContactos(){
         contactos.add(new Contacto("Franz", 31715415));
+        contactos.add(new Contacto("Fer", 11111111));
     }
     public boolean telefonoConectado(){
         return this.telefonoConectado;

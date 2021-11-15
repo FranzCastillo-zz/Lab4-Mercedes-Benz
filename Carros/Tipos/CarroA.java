@@ -10,8 +10,12 @@ public class CarroA extends Carro {
 
     @Override
     public String modoProductividad() {
-        Contacto actual = this.contactos.get(getRandomNumber(0, contactos.size() - 1)); // OBTIENE UN CONTACTO AL AZAR DE LA LISTA DE CONTACTOS
-        return actual.getTarjetaDePresentacion();
+        String texto = "---------------------------------------------------\n";
+        for (Contacto contacto : contactos) {
+            texto += contacto.getTarjetaDePresentacion();
+            texto += "---------------------------------------------------\n";
+        }
+        return texto;
     }
 
     @Override
