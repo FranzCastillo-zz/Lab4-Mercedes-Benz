@@ -21,5 +21,9 @@ public class CarroA extends Carro {
     public String getFuncionProductividad() {
         return "Ver tarjeta de presentacion.";
     }
+
+    public String getFuncionalidadTelefonoEspecifica() {
+        return "Llamar ultimo contacto";
+    }
     
 }

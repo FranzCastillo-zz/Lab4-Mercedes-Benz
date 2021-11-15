@@ -115,9 +115,55 @@ public class MercedesBenz {
         }
     }
     private void modoReproduccion(){
-
+        boolean salirModoReproduccion = false;
+        while(!salirModoReproduccion){
+            int opcion = v.mostrarMenuReproduccion();
+            switch(opcion){
+                case 1: // SELECCIONAR LISTA DE REPRODUCCION
+                break;
+                case 2: // CAMBIAR CANCION
+                break;
+                case 3: // ESCUCHAR CANCION
+                break;
+                case 4: // SALIR MODO REPRODUCCION
+                    salirModoReproduccion = true;
+                break;
+            }
+        }
     }
     private void modoTelefono(){
-
+        boolean salirModoTelefono = false;
+        while(!salirModoTelefono){
+            if(!carroActual.telefonoConectado()){ // SI EL TELEFONO NO ESTA CONECTADO
+                if(v.deseaConectarTelefono()){
+                    carroActual.setTelefonoConectado(true);
+                }else{
+                    salirModoTelefono = true;
+                }
+            }
+            while(carroActual.telefonoConectado() && !salirModoTelefono){ // SI EL TELEFONO NO ESTA CONECTADO, NO ENTRA EN ESTE CICLO
+                int opcion = v.mostrarMenuTelefono(carroActual);
+                switch(opcion){
+                    case 1: // DESCONECTAR TELEFONO
+                        carroActual.setTelefonoConectado(false);
+                    break;
+                    case 2: // MOSTRAR CONTACTOS
+                    break;
+                    case 3: // LLAMAR CONTACTO
+                    break;
+                    case 4: // FINALIZAR LLAMADA
+                    break;
+                    case 5: // FUNCIONALIDAD ESPECIFICA DE CADA CARRO
+                        carroActual.modoTelefonoEspecifico();
+                    break;
+                    case 6: // SALIR MODO TELEFONO
+                        salirModoTelefono = true;
+                    break;
+                    default:
+                        v.opcionInvalida();
+                    break;
+                }
+            }
+        }
     }
 }

@@ -22,5 +22,7 @@ public class CarroS extends Carro{
     public String getFuncionProductividad() {
         return "Planificar Viaje";
     }
-    
+    public String getFuncionalidadTelefonoEspecifica() {
+        return "Cambiar de bocinas a auriculares";
+    }
 }

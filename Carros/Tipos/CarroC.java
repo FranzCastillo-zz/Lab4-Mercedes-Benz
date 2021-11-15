@@ -20,5 +20,8 @@ public class CarroC extends Carro{
     public String getFuncionProductividad() {
         return "Ver pronostico del tiempo";
     }
+    public String getFuncionalidadTelefonoEspecifica() {
+        return "Poner llamada en espera";
+    }
     
 }

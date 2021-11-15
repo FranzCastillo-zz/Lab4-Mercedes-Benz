@@ -13,6 +13,8 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     private int posicionCancionActual;
     // MODO RADIO
     private boolean radioEncendido;
+    // MODO TELEFONO
+    private boolean telefonoConectado;
     // PROPIEDADES DEL CARRO
     private boolean encendido;
 
@@ -33,6 +35,8 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         cancionActual = listaActual.get(posicionCancionActual);
         // --------------- MODO RADIO --------------------
         radioEncendido = false;
+        // --------------- MODO TELEFONO -----------------
+        telefonoConectado = false;
         // ------------- ATRIBUTOS DEL CARRO -------------
         encendido = false;
     }
@@ -51,6 +55,14 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     }
     public void setRadioEncendido(boolean estado){
         radioEncendido = estado;
+    }
+    // ----------------------------------------------------------------------------------------
+    // ----------------------------------------- MODO TELEFONO --------------------------------
+    public boolean telefonoConectado(){
+        return this.telefonoConectado;
+    }
+    public void setTelefonoConectado(boolean estado){
+        this.telefonoConectado = estado;
     }
     // ----------------------------------------------------------------------------------------
     // --------------------------------------- MODO PRODUCTIVIDAD -----------------------------
@@ -93,6 +105,7 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
 
         return llamada;
     }
+    public abstract String getFuncionalidadTelefonoEspecifica();
     //------------------------------------------------------------------------------------------
     //------------------------------------------ SETTERS Y GETTERS -----------------------------
     public boolean getEncendido(){
