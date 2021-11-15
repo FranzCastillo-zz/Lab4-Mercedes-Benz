@@ -15,6 +15,7 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     private boolean radioEncendido;
     // MODO TELEFONO
     private boolean telefonoConectado;
+    protected ArrayList<Contacto> contactos;
     // PROPIEDADES DEL CARRO
     private boolean encendido;
     private boolean estaEnLlamada;
@@ -38,8 +39,14 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         radioEncendido = false;
         // --------------- MODO TELEFONO -----------------
         telefonoConectado = false;
+        contactos = new ArrayList<>();
+        inicializarContactos();
         // ------------- ATRIBUTOS DEL CARRO -------------
         encendido = false;
+    }
+    protected int getRandomNumber(int min, int max) {
+        //https://www.baeldung.com/java-generating-random-numbers-in-range
+        return (int) ((Math.random() * (max - min)) + min);
     }
     // ----------------------------------------- MODO RADIO -----------------------------------
     public void subirEmisora(){
@@ -59,12 +66,16 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     }
     // ----------------------------------------------------------------------------------------
     // ----------------------------------------- MODO TELEFONO --------------------------------
+    private void inicializarContactos(){
+        contactos.add(new Contacto("Franz", 31715415));
+    }
     public boolean telefonoConectado(){
         return this.telefonoConectado;
     }
     public void setTelefonoConectado(boolean estado){
         this.telefonoConectado = estado;
     }
+    
     // ----------------------------------------------------------------------------------------
     // --------------------------------------- MODO PRODUCTIVIDAD -----------------------------
     public abstract String getFuncionProductividad();

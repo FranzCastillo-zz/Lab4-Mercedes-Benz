@@ -1,6 +1,7 @@
 package Carros.Tipos;
 
 import Carros.Carro;
+import Carros.Contacto;
 
 public class CarroA extends Carro {
     public CarroA(){
@@ -9,7 +10,8 @@ public class CarroA extends Carro {
 
     @Override
     public String modoProductividad() {
-        return "*mostrando tarjeta de presentacion*";
+        Contacto actual = this.contactos.get(getRandomNumber(0, contactos.size() - 1)); // OBTIENE UN CONTACTO AL AZAR DE LA LISTA DE CONTACTOS
+        return actual.getTarjetaDePresentacion();
     }
 
     @Override

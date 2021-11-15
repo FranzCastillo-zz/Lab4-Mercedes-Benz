@@ -1,5 +1,5 @@
-import java.util.ArrayList;
 import java.util.Scanner;
+
 import Carros.Carro;
 import Carros.Cancion;
 
@@ -121,7 +121,8 @@ public class Vista {
      * @param c el carro que se mostrara en modo productividad
      * @return int la opcion del menu
      */
-    // PRODUCTIVIDAD
+
+    // ------------------------------------------ PRODUCTIVIDAD
     public int mostrarMenuProductividad(Carro c){
         separador();
         prnt("1. " + c.getFuncionProductividad());
@@ -143,18 +144,25 @@ public class Vista {
             }
         }
     }
-    
+    public void mostrarPantallaModoProductividad(Carro c){
+        separador();
+        prnt("\nMODO PRODUCTIVIDAD:\n");
+        prnt("\t\t" + c.getFuncionProductividad() + "\n");
+        separador();
+    }
     /** 
      * @param funcion el texto resultante de ejecutar el modo reproduccion
      */
     public void mostrarModoProductividad(String funcion){
+        separador();
         prnt(funcion);
+        separador();
     }
     
     /** 
      * @return boolean si el usuario desea encender el radio (true) o no (false)
      */
-    // RADIO
+    // --------------------------------------------- RADIO
     public boolean deseaEncenderRadio(){
         separador();
         prnt("Que procede?");
@@ -211,11 +219,10 @@ public class Vista {
             }
         }
     }
-    
+    // --------------------------------------------- REPRODUCCION
     /** 
      * @return int la opcion del menu
      */
-    // REPRODUCCION
     public int mostrarMenuReproduccion(){
         separador();
         prnt("Que accion desea realizar?");
@@ -242,10 +249,10 @@ public class Vista {
         }
     }
     
+    // ----------------------------------------------- TELEFONO
     /** 
      * @return boolean si el usuario desea conectar el telefono (true) o no (false)
      */
-    // TELEFONO
     public boolean deseaConectarTelefono(){
         separador();
         prnt("Que procede?");

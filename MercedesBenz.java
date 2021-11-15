@@ -66,6 +66,7 @@ public class MercedesBenz {
     private void modoProductividad(){
         boolean salirModoProductividad = false;
         while(!salirModoProductividad){
+            v.mostrarPantallaModoProductividad(carroActual);
             int opcion = v.mostrarMenuProductividad(carroActual);
             switch(opcion){
                 case 1: // FUNCIONALIDAD

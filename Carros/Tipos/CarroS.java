@@ -8,8 +8,9 @@ public class CarroS extends Carro{
     }
 
     @Override
+    // EN UN ACUERDO CON TOMAS EN LA MANERA DE PLANIFICAR ESTA FUNCION SE HA QUEDADO ACORDADO
     public String modoProductividad() {
-        return "*planificando viaje*";
+        return "*planificando viaje* Oh no! Parece que no tienes senial GPS. Prueba de nuevo.";
     }
 
     @Override
