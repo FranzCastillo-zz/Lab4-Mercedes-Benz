@@ -29,6 +29,6 @@ public class Cancion {
         return this.playlist;
     }
     public String reproducir(){
-        return "Esta sonando: ";
+        return "Esta sonando: " + this.nombre + " de " + this.autor;
     }
 }

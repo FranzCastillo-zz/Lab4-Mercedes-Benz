@@ -101,8 +101,15 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         }
         cancionActual = listaActual.get(0);
     }
-    public void cambiarCancion(){ // ADELANTAR CANCION → cancionActual = listaActual.get(posicionCancionActual++ % 5);
-
+    public void adelantarCancion(){
+        cancionActual = listaActual.get(++posicionCancionActual % 5);
+    }
+    public void regresarCancion(){
+        
+        if(--posicionCancionActual == -1){
+            posicionCancionActual = 4;
+        }
+        cancionActual = listaActual.get(posicionCancionActual % 5);
     }
     public Cancion getCancionActual(){
         return this.cancionActual;
