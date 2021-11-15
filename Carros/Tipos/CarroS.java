@@ -18,5 +18,10 @@ public class CarroS extends Carro{
         // TODO Auto-generated method stub
         return null;
     }
+
+    @Override
+    public String getFuncionProductividad() {
+        return "Planificar Viaje";
+    }
     
 }

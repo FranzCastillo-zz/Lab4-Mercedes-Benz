@@ -43,11 +43,9 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
 
     }
     // ----------------------------------------------------------------------------------------
-    /* --------------------------------------- MODO PRODUCTIVIDAD -----------------------------
-
-                        SE IMPLEMENTA DE MANERA ABSTRACTA EN CADA TIPO DE CARRO
-
-       ----------------------------------------------------------------------------------------*/
+    // --------------------------------------- MODO PRODUCTIVIDAD -----------------------------
+    public abstract String getFuncionProductividad();
+    //  ----------------------------------------------------------------------------------------
     // ----------------------------------------- MODO REPRODUCCION ----------------------------
     // AGREGARLES 5 CANCIONES C/U
     private void inicializarListaPop(){

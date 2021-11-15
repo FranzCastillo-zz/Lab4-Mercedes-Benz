@@ -17,5 +17,9 @@ public class CarroC extends Carro{
         // TODO Auto-generated method stub
         return null;
     }
+    @Override
+    public String getFuncionProductividad() {
+        return "Ver pronostico del tiempo";
+    }
     
 }

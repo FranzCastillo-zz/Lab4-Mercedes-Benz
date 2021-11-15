@@ -90,4 +90,21 @@ public class Vista {
             }
         }
     }
+    public int mostrarMenuProductividad(Carro c){
+        separador();
+        prnt("1. " + c.getFuncionProductividad());
+        prnt("2. Salir");
+        while(true){
+            prnt("Ingrese la accion que desea realizar:");
+            try{
+                int opcion = scan.nextInt();
+                scan.nextLine();
+                return opcion;
+            }
+            catch(Exception e){ //SI INGRESA ALGO QUE NO ES NUMERO
+                scan.next();
+                opcionInvalida();
+            }
+        }
+    }
 }

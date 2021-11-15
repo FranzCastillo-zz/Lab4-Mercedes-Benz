@@ -18,5 +18,9 @@ public class CarroA extends Carro {
         // TODO Auto-generated method stub
         return null;
     }
+
+    public String getFuncionProductividad() {
+        return "Ver tarjeta de presentacion.";
+    }
     
 }

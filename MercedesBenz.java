@@ -12,16 +12,19 @@ public class MercedesBenz {
 
     public void ejecutar(){
         while(true){
+            // --------------------- MENU SELECCION DE TIPO DE CARRO ---------------
             boolean regresarSeleccionCarro = false;
             int tipoCarro = v.seleccionarCarro();
             crearCarro(tipoCarro);
             while(!carroActual.getEncendido() && !regresarSeleccionCarro){
+                //------------------ MENU DE SELECCION DE MODO --------------------
                 if(v.deseaEncender()){ // EL CARRO SE ENCIENDE
                     carroActual.setEncendido(true);
                     while(carroActual.getEncendido()){
                         int opcion = v.seleccionarModo();
                         switch(opcion){
                             case 1: // MODO PRODUCTIVIDAD
+                                modoProductividad();
                             break;
                             case 2: // MODO RADIO
                             break;
@@ -55,5 +58,22 @@ public class MercedesBenz {
                 System.exit(1); 
             break;
         }    
+    }
+    private void modoProductividad(){
+        boolean salirModoProductividad = false;
+        int opcion = v.mostrarMenuProductividad(carroActual);
+        while(!salirModoProductividad){
+            switch(opcion){
+                case 1: // FUNCIONALIDAD
+                    carroActual.modoProductividad();
+                break;
+                case 2: // SALIR
+                    salirModoProductividad = true;
+                break;
+                default:
+                    v.opcionInvalida();
+                break;
+            }
+        }
     }
 }
