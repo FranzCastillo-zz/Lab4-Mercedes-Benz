@@ -27,10 +27,13 @@ public class MercedesBenz {
                                 modoProductividad();
                             break;
                             case 2: // MODO RADIO
+                                modoRadio();
                             break;
                             case 3: // MODO REPRODUCCION
+                                modoReproduccion();
                             break;
                             case 4: // MODO TELEFONO
+                                modoTelefono();
                             break;
                             case 5: // APAGAR CARRO
                                 carroActual.setEncendido(false);
@@ -82,7 +85,7 @@ public class MercedesBenz {
         while(!salirModoRadio){
             if(!carroActual.radioEncendido()){ // SI EL RADIO NO ESTA ENCENDIDO
                 if(v.deseaEncenderRadio()){
-                    carroActual.setEncendido(true);
+                    carroActual.setRadioEncendido(true);
                 }else{
                     salirModoRadio = true;
                 }
@@ -110,5 +113,11 @@ public class MercedesBenz {
                 }
             }
         }
+    }
+    private void modoReproduccion(){
+
+    }
+    private void modoTelefono(){
+
     }
 }
