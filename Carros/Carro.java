@@ -11,7 +11,10 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     private Cancion cancionActual;
     private int posicionCancionActual;
 
+    private boolean encendido;
+
     public Carro(){
+        // -------------- MODO REPRODUCCION ---------------
         listaActual = new ArrayList<>();
         // POP
         listaPop = new ArrayList<>();
@@ -25,6 +28,9 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         listaActual = listaPop;
         posicionCancionActual = 0;
         cancionActual = listaActual.get(posicionCancionActual);
+
+        // ------------- ATRIBUTOS DEL CARRO -------------
+        encendido = false;
     }
     // ----------------------------------------- MODO RADIO -----------------------------------
     public void subirEmisora(){
@@ -45,7 +51,7 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     // ----------------------------------------- MODO REPRODUCCION ----------------------------
     // AGREGARLES 5 CANCIONES C/U
     private void inicializarListaPop(){
-        //listaPop.add(new Cancion());
+        listaPop.add(new Cancion("Wake Me Up", "4:07", "Avicii", "Pop"));
     }
     private void inicializarListaRock(){
         //listaPop.add(new Cancion());
@@ -78,5 +84,13 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         String llamada = "";
 
         return llamada;
+    }
+    //------------------------------------------------------------------------------------------
+    //------------------------------------------ SETTERS Y GETTERS -----------------------------
+    public boolean getEncendido(){
+        return this.encendido;
+    }
+    public void setEncendido(boolean estado){
+        this.encendido = estado;
     }
 }

@@ -3,6 +3,9 @@ package Carros.Tipos;
 import Carros.Carro;
 
 public class CarroS extends Carro{
+    public CarroS(){
+        super();
+    }
 
     @Override
     public String modoProductividad() {
