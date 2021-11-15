@@ -6,20 +6,31 @@ public class Cancion {
     private String autor;
     private String genero;
 
-    public Cancion(String nombre, String duracion, String autor, String genero){
+    public Cancion(String nombre, String autor, String duracion, String genero){
         this.nombre = nombre;
-        this.duracion = duracion;
         this.autor = autor;
+        this.duracion = duracion;        
         this.genero = genero;
     }
-    public String getCancion(){
-        String cancion = "";
-        
-        cancion += "Ahora sonando: '" + this.nombre + "'\n";
-        cancion += "De: " + this.autor + "\n";
-        cancion += "Duracion: " + this.duracion + "\n";
-        cancion += "Genero: " + this.genero + "\n";
 
-        return cancion;
+    public Cancion getCancion(){
+        return this;
     }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public String getDuracion() {
+        return this.duracion;
+    }
+
+    public String getAutor() {
+        return this.autor;
+    }
+
+    public String getGenero() {
+        return this.genero;
+    }
+
 }

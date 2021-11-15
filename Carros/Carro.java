@@ -9,14 +9,14 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     private ArrayList<Cancion> listaRock;
     private ArrayList<Cancion> listaRockAlternativo;
     private ArrayList<Cancion> listaActual;
+
     private Cancion cancionActual;
     private int posicionCancionActual;
-    // MODO RADIO
-    private boolean radioEncendido;
-    // MODO TELEFONO
-    private boolean telefonoConectado;
-    // PROPIEDADES DEL CARRO
-    private boolean encendido;
+    
+    private boolean radioEncendido;     // MODO RADIO
+    private boolean telefonoConectado;  // MODO TELEFONO
+    private boolean encendido;          // PROPIEDADES DEL CARRO
+
 
     public Carro(){
         // -------------- MODO REPRODUCCION ---------------
@@ -100,7 +100,7 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
 
     }
     public String escucharCancion(Cancion c){
-        return c.getCancion();
+        return c.getNombre();
     }
     // ----------------------------------------------------------------------------------------
     // --------------------------------------- MODO TELEFONO ----------------------------------
@@ -117,5 +117,14 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     }
     public void setEncendido(boolean estado){
         this.encendido = estado;
+    }
+
+    public String getPhoneConnectionState(){
+        if(telefonoConectado){
+            return "Conectado";
+        }else{
+            return "Desconectado";
+        }
+
     }
 }

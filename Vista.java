@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import Carros.Carro;
+import Carros.Cancion;
+
 
 public class Vista {
     private Scanner scan;
@@ -255,4 +257,33 @@ public class Vista {
             }
         }
     }
+
+    /**
+     * Despliega la radio apagada
+     */
+    public void pantallaRadioApagada(){
+        separador();
+        prnt("\n Radio Apagada \n");
+        separador();
+    }
+
+
+    /**
+     * Sespliega en el radio los datos de la cancion 
+     * @param cancion parametro de tipo Cancion
+     */
+    public void pantallaEnModoReproducción(Cancion cancion){
+        separador();
+        prnt("MODO: REPRODUCCION \n" +
+                "\t\tEN REPRODUCCION: \n" +
+                "\t\tCancion: " + cancion.getNombre() + "\n" +
+                "\t\tArtista: " + cancion.getAutor() + "\n" +
+                "\t\tDuracion: " + cancion.getDuracion() + " min\n" +
+                "\t\tGenero: "+ cancion.getGenero()+ "\n");
+        separador();
+    }
+
+
+    
+
 }
