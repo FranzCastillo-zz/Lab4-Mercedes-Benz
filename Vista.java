@@ -249,6 +249,30 @@ public class Vista {
             }
         }
     }
+    public int seleccionarPlaylist(){
+        separador();
+        prnt("Que playlist desea colocar?");
+        prnt("1. Playlist de Pop");
+        prnt("2. Playlist de Rock");
+        prnt("3. Playlist de Rock Alternativo");
+        separador();
+        while(true){
+            prnt("Ingrese la playlist que desea colocar:");
+            try{
+                int opcion = scan.nextInt();
+                scan.nextLine();
+                if(opcion > 0 && opcion <= 3){
+                    return opcion - 1;
+                }else{
+                    opcionInvalida();
+                }
+            }
+            catch(Exception e){ //SI INGRESA ALGO QUE NO ES NUMERO
+                scan.next();
+                opcionInvalida();
+            }
+        }
+    }
     
     // ----------------------------------------------- TELEFONO
     /** 

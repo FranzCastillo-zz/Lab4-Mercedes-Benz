@@ -122,6 +122,7 @@ public class MercedesBenz {
             int opcion = v.mostrarMenuReproduccion();
             switch(opcion){
                 case 1: // SELECCIONAR LISTA DE REPRODUCCION
+                    carroActual.seleccionarLista(v.seleccionarPlaylist());
                 break;
                 case 2: // SIGUIENTE CANCION
                 break;

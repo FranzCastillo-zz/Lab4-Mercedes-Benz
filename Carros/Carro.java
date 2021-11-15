@@ -60,7 +60,6 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     public void setRadioEncendido(boolean estado){
         radioEncendido = estado;
     }
-    // ----------------------------------------------------------------------------------------
     // ----------------------------------------- MODO TELEFONO --------------------------------
     private void inicializarContactos(){
         contactos.add(new Contacto("Franz", 31715415));
@@ -72,11 +71,8 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     public void setTelefonoConectado(boolean estado){
         this.telefonoConectado = estado;
     }
-    
-    // ----------------------------------------------------------------------------------------
     // --------------------------------------- MODO PRODUCTIVIDAD -----------------------------
     public abstract String getFuncionProductividad();
-    //  ----------------------------------------------------------------------------------------
     // ----------------------------------------- MODO REPRODUCCION ----------------------------
     private void inicializarListaPop(){
         listaPop.add(new Cancion("Wake Me Up", "Avicii", "4:07", "Lista Pop"));
@@ -103,6 +99,7 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
                 listaActual = listaRockAlternativo;
                 break;
         }
+        cancionActual = listaActual.get(0);
     }
     public void cambiarCancion(){ // ADELANTAR CANCION → cancionActual = listaActual.get(posicionCancionActual++ % 5);
 
