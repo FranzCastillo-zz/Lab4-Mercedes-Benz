@@ -31,7 +31,7 @@ public class Vista {
             try{
                 int opcion = scan.nextInt();
                 scan.nextLine();
-                if(opcion > 0 && opcion <= 3){
+                if(opcion > 0 && opcion <= 4){
                     return opcion;
                 }else{
                     opcionInvalida();
@@ -42,7 +42,7 @@ public class Vista {
             }       
         }
     }
-    public boolean deseaEncender(){
+    public boolean deseaEncenderCarro(){
         separador();
         prnt("Que procede?");
         prnt("1. Encender el carro");
@@ -105,6 +105,57 @@ public class Vista {
                 scan.next();
                 opcionInvalida();
             }
+        }
+    }
+    public void mostrarModoProductividad(String funcion){
+        prnt(funcion);
+    }
+    public int mostrarMenuRadio(){
+        separador();
+        prnt("1. Cambiar de FM a AM");
+        prnt("2. Cambiar emisoras");
+        prnt("3. Guardar emisora actual");
+        prnt("4. Cargar Emisora");
+        prnt("5. Apagar Radio");
+        prnt("6. Salir del Modo radio");
+        separador();
+        while(true){
+            prnt("Ingrese la accion que desea realizar:");
+            try{
+                int opcion = scan.nextInt();
+                scan.nextLine();
+                return opcion;
+            }
+            catch(Exception e){ //SI INGRESA ALGO QUE NO ES NUMERO
+                scan.next();
+                opcionInvalida();
+            }
+        }
+    }
+    public boolean deseaEncenderRadio(){
+        separador();
+        prnt("Que procede?");
+        prnt("1. Encender el radio");
+        prnt("2. Regresar a seleccion de modos");
+        separador();
+        while(true){
+            prnt("Ingrese la opcion que desea:");
+            try{
+                int opcion = scan.nextInt();
+                scan.nextLine();
+                switch(opcion){
+                    case 1:
+                        return true;
+                    case 2:
+                        return false;
+                    default:
+                        opcionInvalida();
+                        break;
+                }
+            }catch(Exception e){ //SI INGRESA ALGO QUE NO ES NUMERO
+                scan.next();
+                opcionInvalida();
+            }       
         }
     }
 }

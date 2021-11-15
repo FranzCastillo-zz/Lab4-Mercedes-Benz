@@ -9,8 +9,7 @@ public class CarroS extends Carro{
 
     @Override
     public String modoProductividad() {
-        // TODO Auto-generated method stub
-        return null;
+        return "*planificando viaje*";
     }
 
     @Override

@@ -18,7 +18,7 @@ public class MercedesBenz {
             crearCarro(tipoCarro);
             while(!carroActual.getEncendido() && !regresarSeleccionCarro){
                 //------------------ MENU DE SELECCION DE MODO --------------------
-                if(v.deseaEncender()){ // EL CARRO SE ENCIENDE
+                if(v.deseaEncenderCarro()){ // EL CARRO SE ENCIENDE
                     carroActual.setEncendido(true);
                     while(carroActual.getEncendido()){
                         int opcion = v.seleccionarModo();
@@ -57,15 +57,16 @@ public class MercedesBenz {
             case 4: //SALIR
                 System.exit(1); 
             break;
+            
         }    
     }
     private void modoProductividad(){
         boolean salirModoProductividad = false;
-        int opcion = v.mostrarMenuProductividad(carroActual);
         while(!salirModoProductividad){
+            int opcion = v.mostrarMenuProductividad(carroActual);
             switch(opcion){
                 case 1: // FUNCIONALIDAD
-                    carroActual.modoProductividad();
+                    v.mostrarModoProductividad(carroActual.modoProductividad());
                 break;
                 case 2: // SALIR
                     salirModoProductividad = true;
@@ -73,6 +74,40 @@ public class MercedesBenz {
                 default:
                     v.opcionInvalida();
                 break;
+            }
+        }
+    }
+    private void modoRadio(){
+        boolean salirModoRadio = false;
+        while(!salirModoRadio){
+            if(!carroActual.radioEncendido()){ // SI EL RADIO NO ESTA ENCENDIDO
+                if(v.deseaEncenderRadio()){
+                    carroActual.setEncendido(true);
+                }else{
+                    salirModoRadio = true;
+                }
+            }
+            while(carroActual.radioEncendido() && !salirModoRadio){ // SI EL RADIO NO ESTA ENCENDIDO, NO ENTRA EN ESTE CICLO
+                int opcion = v.mostrarMenuRadio();
+                switch(opcion){
+                    case 1: // FM ←→ AM
+                    break;
+                    case 2: // CAMBIAR EMISORA
+                    break;
+                    case 3: // GUARDAR EMISORA
+                    break;
+                    case 4: // CARGAR EMISORA 
+                    break;
+                    case 5: // APAGAR RADIO
+                        carroActual.setRadioEncendido(false);
+                    break;
+                    case 6: // SALIR MODO RADIO
+                        salirModoRadio = true;
+                    break;
+                    default:
+                        v.opcionInvalida();
+                    break;
+                }
             }
         }
     }

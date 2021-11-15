@@ -4,13 +4,16 @@ import Carros.Modos.*;
 import java.util.ArrayList;
 
 public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefono, ModoReproduccion{
+    // MODO REPRODUCCION
     private ArrayList<Cancion> listaPop;
     private ArrayList<Cancion> listaRock;
     private ArrayList<Cancion> listaRockAlternativo;
     private ArrayList<Cancion> listaActual;
     private Cancion cancionActual;
     private int posicionCancionActual;
-
+    // MODO RADIO
+    private boolean radioEncendido;
+    // PROPIEDADES DEL CARRO
     private boolean encendido;
 
     public Carro(){
@@ -28,7 +31,8 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         listaActual = listaPop;
         posicionCancionActual = 0;
         cancionActual = listaActual.get(posicionCancionActual);
-
+        // --------------- MODO RADIO --------------------
+        radioEncendido = false;
         // ------------- ATRIBUTOS DEL CARRO -------------
         encendido = false;
     }
@@ -41,6 +45,12 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     }
     public void cambiarModo(){
 
+    }
+    public boolean radioEncendido(){
+        return radioEncendido;
+    }
+    public void setRadioEncendido(boolean estado){
+        radioEncendido = estado;
     }
     // ----------------------------------------------------------------------------------------
     // --------------------------------------- MODO PRODUCTIVIDAD -----------------------------
