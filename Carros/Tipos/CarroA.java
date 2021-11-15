@@ -8,6 +8,10 @@ public class CarroA extends Carro {
         super();
     }
 
+    
+    /** 
+     * @return String Las tarjetas de contacto de todos los contactos
+     */
     @Override
     public String modoProductividad() {
         String texto = "---------------------------------------------------\n";
@@ -18,16 +22,28 @@ public class CarroA extends Carro {
         return texto;
     }
 
+    
+    /** 
+     * @return String el resultado de la llamada al ultimo contacto
+     */
     @Override
     public String modoTelefonoEspecifico() {
         // TODO Auto-generated method stub
         return null;
     }
 
+    
+    /** 
+     * @return String El nombre de la funcion especifica
+     */
     public String getFuncionProductividad() {
         return "Ver tarjeta de presentacion.";
     }
 
+    
+    /** 
+     * @return String El nombre de la funcion especifica
+     */
     public String getFuncionalidadTelefonoEspecifica() {
         return "Llamar ultimo contacto";
     }
