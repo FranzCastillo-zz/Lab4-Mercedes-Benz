@@ -9,6 +9,10 @@ public class Vista {
     public Vista(){
         scan = new Scanner(System.in);
     }
+    
+    /** 
+     * @param texto
+     */
     // ------------------------------------- USO SOLO DE LA VISTA ---------------------------
     private void prnt(String texto){
         System.out.println(texto);
@@ -23,6 +27,10 @@ public class Vista {
     public void inicio(){
         prnt("Bienvenido a Mercedes Benz!");
     }
+    
+    /** 
+     * @return boolean Si el usuario desea prender el carro (true) o no (false)
+     */
     //----------------------------------------------- MENUS -------------------------------------------------
     public boolean deseaEncenderCarro(){
         separador();
@@ -50,6 +58,10 @@ public class Vista {
             }       
         }
     }
+    
+    /** 
+     * @return int El numero de la opcion del menu
+     */
     public int seleccionarModo(){
         separador();
         prnt("En que modo del carro desea operar?");
@@ -76,6 +88,10 @@ public class Vista {
             }
         }
     }
+    
+    /** 
+     * @return int el tipo de carro que se creara
+     */
     public int seleccionarCarro(){
         separador();
         prnt("Que carro desea probar?");
@@ -100,6 +116,11 @@ public class Vista {
             }       
         }
     }
+    
+    /** 
+     * @param c el carro que se mostrara en modo productividad
+     * @return int la opcion del menu
+     */
     // PRODUCTIVIDAD
     public int mostrarMenuProductividad(Carro c){
         separador();
@@ -122,9 +143,17 @@ public class Vista {
             }
         }
     }
+    
+    /** 
+     * @param funcion el texto resultante de ejecutar el modo reproduccion
+     */
     public void mostrarModoProductividad(String funcion){
         prnt(funcion);
     }
+    
+    /** 
+     * @return boolean si el usuario desea encender el radio (true) o no (false)
+     */
     // RADIO
     public boolean deseaEncenderRadio(){
         separador();
@@ -152,6 +181,10 @@ public class Vista {
             }       
         }
     }
+    
+    /** 
+     * @return int la opcion del menu
+     */
     public int mostrarMenuRadio(){
         separador();
         prnt("1. Cambiar de FM a AM");
@@ -178,6 +211,10 @@ public class Vista {
             }
         }
     }
+    
+    /** 
+     * @return int la opcion del menu
+     */
     // REPRODUCCION
     public int mostrarMenuReproduccion(){
         separador();
@@ -204,6 +241,10 @@ public class Vista {
             }
         }
     }
+    
+    /** 
+     * @return boolean si el usuario desea conectar el telefono (true) o no (false)
+     */
     // TELEFONO
     public boolean deseaConectarTelefono(){
         separador();
@@ -231,6 +272,11 @@ public class Vista {
             }       
         }    
     }
+    
+    /** 
+     * @param c el carro con el que se mostrara el menu
+     * @return int la opcion del menu
+     */
     public int mostrarMenuTelefono(Carro c){
         separador();
         prnt("Que accion desea realizar?");
@@ -270,7 +316,7 @@ public class Vista {
 
 
     /**
-     * Sespliega en el radio los datos de la cancion 
+     * Despliega en el radio los datos de la cancion 
      * @param cancion parametro de tipo Cancion
      */
     public void pantallaEnModoReproducción(Carro c){
@@ -285,6 +331,10 @@ public class Vista {
         separador();
     }
 
+    
+    /** 
+     * @param texto el texto resultante de reproducir la cancion
+     */
     public void mostrarReproducirCancion(String texto){
         prnt(texto);
     }

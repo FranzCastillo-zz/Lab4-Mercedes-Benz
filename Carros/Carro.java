@@ -70,7 +70,6 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     public abstract String getFuncionProductividad();
     //  ----------------------------------------------------------------------------------------
     // ----------------------------------------- MODO REPRODUCCION ----------------------------
-    // AGREGARLES 5 CANCIONES C/U
     private void inicializarListaPop(){
         listaPop.add(new Cancion("Wake Me Up", "Avicii", "4:07", "Lista Pop"));
         listaPop.add(new Cancion("Cocoon", "Milky Chance", "4:15",  "Lista Pop"));
