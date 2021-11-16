@@ -372,6 +372,10 @@ public class Vista {
         prnt(texto);
     }
 
+    /**
+     * Despliega la pantalla del modo radio
+     * @param c parametro de tipo Carro
+     */
     public void pantallaEnModoRadio(Carro c){
         separador();
         prnt("MODO: RADIO \n");
@@ -380,6 +384,10 @@ public class Vista {
         separador();
     }
 
+    /**
+     * Despliega la pantalla del modo telefono
+     * @param c parametro de tipo Carro
+     */
     public void pantallaEnModoTelefono(Carro c){
         boolean telefono = c.getTelefonoConectado();
         boolean llamada = c.getEstaEnLlamada();
@@ -400,12 +408,19 @@ public class Vista {
         separador();
     }
 
+    /**
+     * Despliega la pantalla cuando el carro esta apagado
+     */
     public void pantallaCarroApagado(){
         separador();
         prnt("\t\t\tCARRO APAGADO");
         separador();
     }
 
+    /**
+     * Pide la emisora a guardar
+     * @param eg parametro de tipo ArrayList<Double>
+     */
     public int pedirEmisora(ArrayList<Double> eg){
         while(true){
             try{
@@ -425,6 +440,9 @@ public class Vista {
         }
     }
 
+    /**
+     * Despliega un mensaje en pantalla
+     */
     public void emisorasLlenas(){
         separador();
         prnt("Se ha alcanzado el limite de emisoras guardadas");
