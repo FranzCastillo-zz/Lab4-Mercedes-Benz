@@ -17,6 +17,7 @@ public class MercedesBenz {
             int tipoCarro = v.seleccionarCarro();
             crearCarro(tipoCarro);
             while(!carroActual.getEncendido() && !regresarSeleccionCarro){
+                v.pantallaCarroApagado();
                 //------------------ MENU DE SELECCION DE MODO --------------------
                 if(v.deseaEncenderCarro()){ // EL CARRO SE ENCIENDE
                     carroActual.setEncendido(true);
@@ -85,6 +86,7 @@ public class MercedesBenz {
         boolean salirModoRadio = false;
         while(!salirModoRadio){
             if(!carroActual.radioEncendido()){ // SI EL RADIO NO ESTA ENCENDIDO
+                v.pantallaRadioApagado();
                 if(v.deseaEncenderRadio()){
                     carroActual.setRadioEncendido(true);
                 }else{
@@ -92,9 +94,11 @@ public class MercedesBenz {
                 }
             }
             while(carroActual.radioEncendido() && !salirModoRadio){ // SI EL RADIO NO ESTA ENCENDIDO, NO ENTRA EN ESTE CICLO
+                v.pantallaEnModoRadio(carroActual);
                 int opcion = v.mostrarMenuRadio();
                 switch(opcion){
                     case 1: // FM ←→ AM
+                        carroActual.cambiarModo();
                     break;
                     case 2: // CAMBIAR EMISORA
                     break;
@@ -135,6 +139,9 @@ public class MercedesBenz {
                 break;
                 case 5: // SALIR MODO REPRODUCCION
                     salirModoReproduccion = true;
+                break;
+                default:
+                        v.opcionInvalida();
                 break;
             }
         }

@@ -40,6 +40,7 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         // --------------- MODO RADIO --------------------
         radioEncendido = false;
         // --------------- MODO TELEFONO -----------------
+        estaEnLlamada = false;
         telefonoConectado = false;
         contactos = new ArrayList<>();
         inicializarContactos();
@@ -164,5 +165,14 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     
     public String getModoActual(){
         return this.modoActual;
+    }
+    public double getEmisoraActual(){
+        return this.emisoraActual;
+    }
+    public boolean getEstaEnLlamada(){
+        return this.estaEnLlamada;
+    }
+    public boolean getTelefonoConectado(){
+        return this.telefonoConectado;
     }
 }

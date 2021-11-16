@@ -146,7 +146,7 @@ public class Vista {
     }
     public void mostrarPantallaModoProductividad(Carro c){
         separador();
-        prnt("\nMODO PRODUCTIVIDAD:\n");
+        prnt("\nMODO: PRODUCTIVIDAD\n");
         prnt("\t\t" + c.getFuncionProductividad() + "\n");
         separador();
     }
@@ -237,7 +237,7 @@ public class Vista {
             try{
                 int opcion = scan.nextInt();
                 scan.nextLine();
-                if(opcion > 0 && opcion <= 4){
+                if(opcion > 0 && opcion <= 5){
                     return opcion;
                 }else{
                     opcionInvalida();
@@ -340,9 +340,9 @@ public class Vista {
     /**
      * Despliega la radio apagada
      */
-    public void pantallaRadioApagada(){
+    public void pantallaRadioApagado(){
         separador();
-        prnt("\n Radio Apagada \n");
+        prnt("\t\t\tRADIO APAGADO");
         separador();
     }
 
@@ -363,11 +363,45 @@ public class Vista {
         separador();
     }
 
-    
     /** 
      * @param texto el texto resultante de reproducir la cancion
      */
     public void mostrarReproducirCancion(String texto){
         prnt(texto);
     }
+
+    public void pantallaEnModoRadio(Carro c){
+        separador();
+        prnt("MODO: RADIO \n");
+        prnt("\t\tBANDA: " + c.getModoActual());
+        prnt("\t\tEMISORA: " + c.getEmisoraActual());
+        separador();
+    }
+
+    public void pantallaEnModoTelefono(Carro c){
+        boolean telefono = c.getTelefonoConectado();
+        boolean llamada = c.getEstaEnLlamada();
+        separador();
+        prnt("MODO: TELEFONO \n");
+        if (telefono == false){
+            prnt("\t\tTELEFONO: DESCONECTADO");
+        }
+        else{
+            prnt("\t\tTELEFONO: CONECTADO");
+        }
+        if (llamada == false){
+            prnt("\t\tLLAMADA: NO HAY LLAMADAS SALIENTES");
+        }
+        else{
+            prnt("\t\tLLAMADA: EN LLAMADA");
+        }
+        separador();
+    }
+
+    public void pantallaCarroApagado(){
+        separador();
+        prnt("\t\t\tCARRO APAGADO");
+        separador();
+    }
+
 }
