@@ -100,16 +100,26 @@ public class MercedesBenz {
                     case 1: // FM ←→ AM
                         carroActual.cambiarModo();
                     break;
-                    case 2: // CAMBIAR EMISORA
+                    case 2: // SUBIR EMISORA
+                        carroActual.subirEmisora();
                     break;
-                    case 3: // GUARDAR EMISORA
+                    case 3: // BAJAR EMISORA
+                        carroActual.bajarEmisora();
                     break;
-                    case 4: // CARGAR EMISORA 
+                    case 4: // GUARDAR EMISORA ACTUAL
+                        if (carroActual.getEmisorasGuardadas().size() <= 50)
+                        {
+                            carroActual.guardarEmisora(carroActual.getEmisoraActual());
+                        }
                     break;
-                    case 5: // APAGAR RADIO
-                        carroActual.setRadioEncendido(false);
+                    case 5: // CARGAR EMISORA 
+                        int Pemisora = v.pedirEmisora(carroActual.getEmisorasGuardadas());
+                        carroActual.setEmisoraActual(Pemisora);
                     break;
-                    case 6: // SALIR MODO RADIO
+                    case 6: // APAGAR RADIO
+                     carroActual.setRadioEncendido(false);
+                    break;
+                    case 7: // SALIR MODO RADIO
                         salirModoRadio = true;
                     break;
                     default:

@@ -13,6 +13,7 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     private int posicionCancionActual;
     // MODO RADIO
     private boolean radioEncendido;
+    private ArrayList<Double> emisorasGuardadas;
     // MODO TELEFONO
     private boolean telefonoConectado;
     protected ArrayList<Contacto> contactos;
@@ -39,6 +40,7 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         cancionActual = listaActual.get(posicionCancionActual);
         // --------------- MODO RADIO --------------------
         radioEncendido = false;
+        emisorasGuardadas = new ArrayList<>();
         // --------------- MODO TELEFONO -----------------
         estaEnLlamada = false;
         telefonoConectado = false;
@@ -51,10 +53,11 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     }
     // ----------------------------------------- MODO RADIO -----------------------------------
     public void subirEmisora(){
+        this.emisoraActual += 0.5;
 
     }
     public void bajarEmisora(){
-
+        this.emisoraActual -= 0.5;
     }
     public void cambiarModo(){
         if (this.modoActual.equals("FM")){
@@ -70,10 +73,19 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     public void setRadioEncendido(boolean estado){
         radioEncendido = estado;
     }
+
+    public void guardarEmisora(double e){
+        emisorasGuardadas.add(e);
+    }
+    public void setEmisoraActual(int p){
+        this.emisoraActual = emisorasGuardadas.get(p);
+    }
+
     // ----------------------------------------- MODO TELEFONO --------------------------------
     private void inicializarContactos(){
         contactos.add(new Contacto("Franz", 31715415));
-        contactos.add(new Contacto("Fer", 11111111));
+        contactos.add(new Contacto("Fer", 58792752));
+        contactos.add(new Contacto("Gus", 45801692));
     }
     public boolean telefonoConectado(){
         return this.telefonoConectado;
@@ -174,5 +186,8 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     }
     public boolean getTelefonoConectado(){
         return this.telefonoConectado;
+    }
+    public ArrayList<Double> getEmisorasGuardadas(){
+        return this.emisorasGuardadas;
     }
 }

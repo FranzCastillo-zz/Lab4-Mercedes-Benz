@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 import Carros.Carro;
 import Carros.Cancion;
@@ -196,18 +197,19 @@ public class Vista {
     public int mostrarMenuRadio(){
         separador();
         prnt("1. Cambiar de FM a AM");
-        prnt("2. Cambiar emisoras");
-        prnt("3. Guardar emisora actual");
-        prnt("4. Cargar Emisora");
-        prnt("5. Apagar Radio");
-        prnt("6. Salir del Modo radio");
+        prnt("2. Avanzar emisora");
+        prnt("3. Retroceder emisora");
+        prnt("4. Guardar emisora actual");
+        prnt("5. Cargar Emisora");
+        prnt("6. Apagar Radio");
+        prnt("7. Salir del Modo radio");
         separador();
         while(true){
             prnt("Ingrese la accion que desea realizar:");
             try{
                 int opcion = scan.nextInt();
                 scan.nextLine();
-                if(opcion > 0 && opcion <= 6){
+                if(opcion > 0 && opcion <= 7){
                     return opcion;
                 }else{
                     opcionInvalida();
@@ -401,6 +403,31 @@ public class Vista {
     public void pantallaCarroApagado(){
         separador();
         prnt("\t\t\tCARRO APAGADO");
+        separador();
+    }
+
+    public int pedirEmisora(ArrayList<Double> eg){
+        while(true){
+            try{
+                for (int i = 0; i < eg.size(); i++)
+                {
+                    prnt(i+1 + ") " + eg.get(i));
+                }
+                prnt("Que emisora desea cargar? (ingrese solamente el numero)");
+                int opcion = scan.nextInt();
+                scan.nextLine();
+                return opcion-1;
+            }
+            catch(Exception e){ //SI INGRESA ALGO QUE NO ES NUMERO
+                scan.next();
+                opcionInvalida();
+            }
+        }
+    }
+
+    public void emisorasLlenas(){
+        separador();
+        prnt("Se ha alcanzado el limite de emisoras guardadas");
         separador();
     }
 
