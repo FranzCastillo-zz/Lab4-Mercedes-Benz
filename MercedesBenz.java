@@ -47,6 +47,10 @@ public class MercedesBenz {
             }
         }
     }
+    
+    /** 
+     * @param tipoCarro
+     */
     private void crearCarro(int tipoCarro){
         switch(tipoCarro){
             case 1: //CARRO TIPO C

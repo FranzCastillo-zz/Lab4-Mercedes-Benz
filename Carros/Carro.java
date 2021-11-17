@@ -23,8 +23,6 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     private boolean estaEnLlamada;
     private String modoActual;
     private double emisoraActual;
-    
-    
 
     public Carro(){
         // -------------- MODO REPRODUCCION ---------------
@@ -72,16 +70,31 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
             this.modoActual = "FM";
         }
     }
+    
+    /** 
+     * @return boolean
+     */
     public boolean radioEncendido(){
         return radioEncendido;
     }
+    
+    /** 
+     * @param estado
+     */
     public void setRadioEncendido(boolean estado){
         radioEncendido = estado;
     }
-
+ 
+    /** 
+     * @param e
+     */
     public void guardarEmisora(double e){
         emisorasGuardadas.add(e);
     }
+    
+    /** 
+     * @param p
+     */
     public void setEmisoraActual(int p){
         this.emisoraActual = emisorasGuardadas.get(p);
     }
@@ -92,13 +105,25 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         contactos.add(new Contacto("Fer", 58792752));
         contactos.add(new Contacto("Gus", 45801692));
     }
+    
+    /** 
+     * @return boolean
+     */
     public boolean telefonoConectado(){
         return this.telefonoConectado;
     }
+    
+    /** 
+     * @param estado
+     */
     public void setTelefonoConectado(boolean estado){
         this.telefonoConectado = estado;
     }
     
+    /** 
+     * @param inicializarListaPop(
+     * @return String
+     */
     // --------------------------------------- MODO PRODUCTIVIDAD -----------------------------
     /** 
      * @return String El efecto de ejecutar la funcion de productividad
@@ -169,48 +194,98 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     public ArrayList<Cancion> getPlaylistActual(){
         return this.listaActual;
     }
+    
+    /** 
+     * @param c
+     * @return String
+     */
     // --------------------------------------- MODO TELEFONO ----------------------------------
     public String llamarContacto(Contacto c){
         String llamada = "";
 
         return llamada;
     }
+    
+    /** 
+     * @param getEncendido(
+     * @return String
+     */
     public abstract String getFuncionalidadTelefonoEspecifica();
+    
+    /** 
+     * @return boolean
+     */
     //------------------------------------------ SETTERS Y GETTERS -----------------------------
     public boolean getEncendido(){
         return this.encendido;
     }
+    
+    /** 
+     * @param estado
+     */
     public void setEncendido(boolean estado){
         this.encendido = estado;
     }
     
+    /** 
+     * @return String
+     */
     public String getModoActual(){
         return this.modoActual;
     }
+    
+    /** 
+     * @return double
+     */
     public double getEmisoraActual(){
         return this.emisoraActual;
     }
 
+    /** 
+     * @return boolean
+     */
     public boolean getEstaEnLlamada(){
         return this.estaEnLlamada;
     }
+    
+    /** 
+     * @param bool
+     */
     public void setEstaEnLlamada(boolean bool){
         this.estaEnLlamada = bool;
     }
 
+    /** 
+     * @return boolean
+     */
     public boolean getTelefonoConectado(){
         return this.telefonoConectado;
     }
+    
+    /** 
+     * @return ArrayList<Double>
+     */
     public ArrayList<Double> getEmisorasGuardadas(){
         return this.emisorasGuardadas;
     }
+    
+    /** 
+     * @param index
+     */
     public void setLastContactIndex(int index){
         this.lastContactIndex = index;
     }
+    
+    /** 
+     * @return int
+     */
     public int getLastContactIndex(){
         return this.lastContactIndex;    
     }
-
+    
+    /** 
+     * @return ArrayList<String[]>
+     */
     public ArrayList<String[]> getContactos(){
         ArrayList<String[]> contactData = new ArrayList<String[]>();
         
