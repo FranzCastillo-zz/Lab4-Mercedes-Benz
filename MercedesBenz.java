@@ -171,13 +171,17 @@ public class MercedesBenz {
                 switch(opcion){
                     case 1: // DESCONECTAR TELEFONO
                         carroActual.setTelefonoConectado(false);
-                    break;
+                        break;
                     case 2: // MOSTRAR CONTACTOS
-                    break;
+                        v.showContacts(carroActual);
+                        break;
                     case 3: // LLAMAR CONTACTO
-                    break;
+                        if(carroActual.getEstaEnLlamada() == false){
+                            v.llamandoContacto(carroActual, v.askContactIndex());
+                        }
+                        break;
                     case 4: // FINALIZAR LLAMADA
-                    break;
+                        break;  
                     case 5: // FUNCIONALIDAD ESPECIFICA DE CADA CARRO
                         carroActual.modoTelefonoEspecifico();
                     break;

@@ -1,7 +1,9 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 import Carros.Carro;
+import Carros.Contacto;
 import Carros.Cancion;
 
 
@@ -449,4 +451,57 @@ public class Vista {
         separador();
     }
 
+    /**
+     *Sirve para preguntarle al usuario el contatco que quiere llamar
+     * @return devuelve un numero entero
+     */
+    public int askContactIndex(){
+        prnt("Ingrese el numero de contacto: ");
+        int contacto = 0;
+        try{
+            contacto = scan.nextInt();
+            scan.nextLine();
+
+            contacto--;
+
+        }catch(InputMismatchException e){
+            scan.nextLine();
+            opcionInvalida();
+        }
+
+        return contacto;
+    }
+
+    /**
+     * Despliega la llamada a un contacto
+     * @param carro Parametro de tipo carro de donde se obtiene la lista de contactos
+     * @param indice Parametro de tipo entero que permite ingresar a un dato especifico de los contactos
+     */
+    public void llamandoContacto(Carro carro,int indice){
+        try{
+        prnt("Llamando a " + carro.getContactos().get(indice)[0] + "... \n" );
+        }catch(IndexOutOfBoundsException e){    
+            opcionInvalida();
+            llamandoContacto(carro,askContactIndex());
+        }
+    }
+
+    /**
+     * Despliega los contactos en la pantalla
+     * @param carro El parametro es de tipo Carro y nos sirve para 
+     */
+    public void showContacts(Carro carro){
+        separador();
+        for(int i = 0; i < carro.getContactos().size() ; i++){
+            prnt(   "\n" + (i + 1) + ". Nombre: " + carro.getContactos().get(i)[0] + 
+                    "\n Numero: " + carro.getContactos().get(i)[1] + "\n");            
+        }
+        separador();
+    }
+
+    public void llamadaFinalizada(){
+        prnt("Se ha finalizado la llamada \n");
+    }
+
 }
+

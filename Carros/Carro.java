@@ -110,6 +110,10 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     }
     private void inicializarListaRock(){
         listaRock.add(new Cancion("Golden Trunks","Arctic Monkeys","2:53","Lista Rock"));
+        listaRock.add(new Cancion("Slomo", "Slowdive", "6:53", "Lista Rock"));
+        listaRock.add(new Cancion("Black Star", "Radiohead", "4:07", "Lista Rock"));
+        listaRock.add(new Cancion("Tighten Up", "The Black Keys", "3:31", "Lista Rock"));
+        listaRock.add(new Cancion("I'm so afraid", "Fleetwood Mac", "4:23", "Lista Rock"));
     }
     private void inicializarListaRockAlternativo (){
         listaRockAlternativo.add(new Cancion("Time To Dance", "Panic! At The Disco", "3:22", "Lista Rock Alternativo"));
@@ -190,4 +194,14 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     public ArrayList<Double> getEmisorasGuardadas(){
         return this.emisorasGuardadas;
     }
+    public ArrayList<String[]> getContactos(){
+        ArrayList<String[]> contactData = new ArrayList<String[]>();
+        
+        for (Contacto contacto : contactos) {
+            String[] contactInfo = {contacto.getNombre(), String.valueOf(contacto.getNumero())};
+            contactData.add(contactInfo);
+        }
+        return contactData;
+    }
+
 }
