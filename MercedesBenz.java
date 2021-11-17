@@ -186,6 +186,8 @@ public class MercedesBenz {
 
                     case 3: // LLAMAR CONTACTO
                         if(carroActual.getEstaEnLlamada() == false){
+                            v.showContacts(carroActual);
+
                             int index = v.askContactIndex();                            
                             v.llamandoContacto(carroActual, index);
                             carroActual.setLastContactIndex(index);
