@@ -17,11 +17,14 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     // MODO TELEFONO
     private boolean telefonoConectado;
     protected ArrayList<Contacto> contactos;
+    private int lastContactIndex;
     // PROPIEDADES DEL CARRO
     private boolean encendido;
     private boolean estaEnLlamada;
     private String modoActual;
     private double emisoraActual;
+    
+    
 
     public Carro(){
         // -------------- MODO REPRODUCCION ---------------
@@ -45,6 +48,8 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
         estaEnLlamada = false;
         telefonoConectado = false;
         contactos = new ArrayList<>();
+        lastContactIndex = 0;
+        
         inicializarContactos();
         // ------------- ATRIBUTOS DEL CARRO -------------
         encendido = false;
@@ -185,15 +190,27 @@ public abstract class Carro implements ModoProductividad, ModoRadio, ModoTelefon
     public double getEmisoraActual(){
         return this.emisoraActual;
     }
+
     public boolean getEstaEnLlamada(){
         return this.estaEnLlamada;
     }
+    public void setEstaEnLlamada(boolean bool){
+        this.estaEnLlamada = bool;
+    }
+
     public boolean getTelefonoConectado(){
         return this.telefonoConectado;
     }
     public ArrayList<Double> getEmisorasGuardadas(){
         return this.emisorasGuardadas;
     }
+    public void setLastContactIndex(int index){
+        this.lastContactIndex = index;
+    }
+    public int getLastContactIndex(){
+        return this.lastContactIndex;    
+    }
+
     public ArrayList<String[]> getContactos(){
         ArrayList<String[]> contactData = new ArrayList<String[]>();
         

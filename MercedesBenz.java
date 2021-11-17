@@ -175,19 +175,36 @@ public class MercedesBenz {
                     case 1: // DESCONECTAR TELEFONO
                         carroActual.setTelefonoConectado(false);
                         break;
+
                     case 2: // MOSTRAR CONTACTOS
                         v.showContacts(carroActual);
                         break;
+
                     case 3: // LLAMAR CONTACTO
                         if(carroActual.getEstaEnLlamada() == false){
-                            v.llamandoContacto(carroActual, v.askContactIndex());
+                            int index = v.askContactIndex();                            
+                            v.llamandoContacto(carroActual, index);
+                            carroActual.setLastContactIndex(index);
+
+                            carroActual.setEstaEnLlamada(true);
+                        }else{
+                            v.estaEnLlamada();
                         }
                         break;
+                    
                     case 4: // FINALIZAR LLAMADA
-                        break;  
+                    if(carroActual.getEstaEnLlamada()){
+                        v.llamadaFinalizada();
+                        carroActual.setEstaEnLlamada(false);
+                    }else{
+                        v.noEstaEnLlamada();
+                    }
+                    break;  
+                
                     case 5: // FUNCIONALIDAD ESPECIFICA DE CADA CARRO
-                        carroActual.modoTelefonoEspecifico();
+                    v.printMensajeTelefono(carroActual.modoTelefonoEspecifico());
                     break;
+                    
                     case 6: // SALIR MODO TELEFONO
                         salirModoTelefono = true;
                     break;

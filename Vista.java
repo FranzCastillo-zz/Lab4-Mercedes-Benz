@@ -514,6 +514,18 @@ public class Vista {
     public void llamadaFinalizada(){
         prnt("Se ha finalizado la llamada \n");
     }
+    
+    public void noEstaEnLlamada(){
+        prnt("No esta en ninguna llamada actualmente");
+    }
+
+    public void estaEnLlamada(){
+        prnt("usted ya esta en una llamada");
+    }
+
+    public void printMensajeTelefono(String message){
+        prnt(message);
+    }
 
 }
 

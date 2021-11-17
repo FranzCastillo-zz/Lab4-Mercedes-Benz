@@ -28,8 +28,13 @@ public class CarroA extends Carro {
      */
     @Override
     public String modoTelefonoEspecifico() {
-        // TODO Auto-generated method stub
-        return null;
+        String name = super.getContactos().get(super.getLastContactIndex())[0];
+        String message = null;
+
+        if(name != null){
+            message = "Llamando al ultimo contacto: " + name;
+        }
+        return message;
     }
 
     
@@ -45,7 +50,7 @@ public class CarroA extends Carro {
      * @return String El nombre de la funcion especifica
      */
     public String getFuncionalidadTelefonoEspecifica() {
-        return "Llamar ultimo contacto";
+        return "Llamar al ultimo contacto";
     }
     
 }

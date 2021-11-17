@@ -3,9 +3,10 @@ package Carros.Tipos;
 import Carros.Carro;
 import java.util.Random;
 
-public class CarroC extends Carro{
+public class CarroC extends Carro{    
+
     public CarroC(){
-        super();
+        super();  
     }
     
     /** 
@@ -27,15 +28,20 @@ public class CarroC extends Carro{
     }
 
     
-    /** 
-     * @return String el efecto de colocar la llamada en espera
+    /**
+     * Devuelve un mensaje u otro dependiendo si el ususario esta en una llamada o no 
      */
     @Override
     public String modoTelefonoEspecifico() {
-        // TODO Auto-generated method stub
-        return null;
+        String message = null;
+        if(getEstaEnLlamada()){
+            message = "Se ha puesto la llamada en espera";
+        }else{
+            message = "No hay ninguna llamada en curso, por lo tanto no se ha puesto en espera";
+        }
+        return message;
     }
-    
+
     /** 
      * @return String El nombre de la funcion 
      */

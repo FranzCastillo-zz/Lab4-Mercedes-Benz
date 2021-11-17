@@ -3,8 +3,11 @@ package Carros.Tipos;
 import Carros.Carro;
 
 public class CarroS extends Carro{
+    boolean bocinas;
+
     public CarroS(){
         super();
+        this.bocinas = true;
     }
 
     
@@ -19,13 +22,23 @@ public class CarroS extends Carro{
 
     
     /** 
-     * @return String El efecto de la funcion especifica de telefono
+     * @return String mensaje que le indica al usuario el estado del dispositivo de audio(bocinas)
      */
     @Override
     public String modoTelefonoEspecifico() {
-        // TODO Auto-generated method stub
-        return null;
+        String message = "Se ha cambiado el dispositivo de audio a: ";
+        
+        if(this.bocinas){
+            this.bocinas = false;
+            message += "auriculares";
+        }else{
+            this.bocinas = true;
+            message += "bocinas";
+        }
+        
+        return message;
     }
+    
 
     
     /** 
