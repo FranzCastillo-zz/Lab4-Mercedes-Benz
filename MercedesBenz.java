@@ -114,7 +114,10 @@ public class MercedesBenz {
                     break;
                     case 5: // CARGAR EMISORA 
                         int Pemisora = v.pedirEmisora(carroActual.getEmisorasGuardadas());
-                        carroActual.setEmisoraActual(Pemisora);
+                        if (Pemisora != -1)
+                        {
+                            carroActual.setEmisoraActual(Pemisora);
+                        }
                     break;
                     case 6: // APAGAR RADIO
                      carroActual.setRadioEncendido(false);

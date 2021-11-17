@@ -426,14 +426,26 @@ public class Vista {
     public int pedirEmisora(ArrayList<Double> eg){
         while(true){
             try{
-                for (int i = 0; i < eg.size(); i++)
+                if (eg.isEmpty() == false)
                 {
-                    prnt(i+1 + ") " + eg.get(i));
+                    for (int i = 0; i < eg.size(); i++)
+                    {
+                        prnt(i+1 + ") " + eg.get(i));
+                    }
+                    prnt("Que emisora desea cargar? (ingrese solamente el numero)");
+                    int opcion = scan.nextInt();
+                    scan.nextLine();
+                    if((opcion-1) < eg.size() && (opcion-1) >= 0){
+                        return opcion-1;
+                    }else{
+                        opcionInvalida();
+                    }
                 }
-                prnt("Que emisora desea cargar? (ingrese solamente el numero)");
-                int opcion = scan.nextInt();
-                scan.nextLine();
-                return opcion-1;
+                else
+                {
+                    prnt("No hay ninguna emisora guardada");
+                    return -1;
+                }
             }
             catch(Exception e){ //SI INGRESA ALGO QUE NO ES NUMERO
                 scan.next();
